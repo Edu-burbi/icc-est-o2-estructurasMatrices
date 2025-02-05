@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Cell {
     
     public int row, col;
@@ -16,14 +18,16 @@ public class Cell {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) 
+        return true;
+        if (obj == null || getClass() != obj.getClass()) 
+        return false;
         Cell cell = (Cell) obj;
         return row == cell.row && col == cell.col;
     }
 
     @Override
     public int hashCode() {
-        return 31 * row + col;
+        return Objects.hash(row, col);
     }
 }
