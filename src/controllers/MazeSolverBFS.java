@@ -1,8 +1,8 @@
 package controllers;
 
+import controllers.interfaces.MazeSolver;
 import java.util.ArrayList;
 import java.util.List;
-import controllers.interfaces.MazeSolver;
 import models.Cell;
 
 public class MazeSolverBFS implements MazeSolver{

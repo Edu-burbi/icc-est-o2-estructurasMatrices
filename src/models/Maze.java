@@ -41,17 +41,14 @@ public class Maze {
                 boolean celda = grid[j][k];
                 if(isInPath(j, k, path)){
                     System.out.print(" > ");
-
                 }else if (celda){
                     System.out.print(" - ");
                 }else{
                     System.out.print(" * ");
                 }
             }
+            System.out.println();
         }
-
-        System.out.println();
-
     }
 
     private boolean isInPath(int j, int k, List<Cell> path){
@@ -63,4 +60,3 @@ public class Maze {
         return false;
     }
 }
-
