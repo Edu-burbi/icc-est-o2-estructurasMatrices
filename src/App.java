@@ -30,7 +30,7 @@ public class App {
             new MazeSolverDP()
         );
 
-        int opcion = 1; // Puedes cambiar la opción a 2 o 3 para probar otros solucionadores
+        int opcion = 2; // Puedes cambiar la opción a 2 o 3 para probar otros solucionadores
         MazeSolver solver = soluciones.get(opcion - 1); // La opción debe ser 1, 2 o 3
         List<Cell> path = solver.getPath(maze, Laberinto, start, end);
 
