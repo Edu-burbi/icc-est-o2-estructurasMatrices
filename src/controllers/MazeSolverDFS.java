@@ -1,26 +1,24 @@
 package controllers;
 
+import controllers.interfaces.MazeSolver;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import models.Cell;
 import models.Maze;
 
 public class MazeSolverDFS implements MazeSolver {
     private Set<Cell> visited = new HashSet<>();
 
-    @Override  // Asegúrate de usar @Override
-    public List<Cell> getPath(Maze maze, Cell start, Cell end) {
-        boolean[][] grid = maze.getGrid();  // Obtener la matriz booleana del laberinto
+    @Override
+    public List<Cell> getPath(Maze maze, boolean[][] grid, Cell start, Cell end) {
         List<Cell> path = new ArrayList<>();
         if (dfs(grid, start.row, start.col, end, path)) {
             return path;
         }
         return new ArrayList<>();
     }
-
     private boolean dfs(boolean[][] grid, int row, int col, Cell end, List<Cell> path) {
         Cell cell = new Cell(row, col);
         if (!isValid(grid, row, col) || visited.contains(cell)) {
